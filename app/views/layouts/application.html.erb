@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/2000/REC-xhtml1-20000126/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
+		
+<title><%= @title %></title> 
+  <%= stylesheet_link_tag '23' %>
+</head> 
+
+<body>
+
+<div id="top">
+<span class="logo">Ask Economists . Com</span>
+<span class="tagline">| Ask Economists About Economics</span>
+</div>
+<div id="nav">  <%= link_to "Home", :controller => :main %> |
+  <%= link_to "About", :controller => :main, :action => :about %> |
+  <%= link_to "Authors", users_path  %> |
+  <%= link_to "Questions", questions_path %>
+<% if current_user %>  
+  | <%= link_to "Logout", logout_path %> | <%= link_to 'Profile', current_user %>
+<% else %>
+  | <%= link_to "Login", login_path %> | <%= link_to "Register", signup_path %>
+<% end %> |
+  <%= link_to "Ask a question", new_question_path %></div>
+
+
+
+<div id="left">
+
+</div>
+
+<div id="right">   
+
+
+
+</div>
+
+<div id="content">
+  <p style="color: green"><%= flash[:notice] %></p>
+
+  <%= yield  %>
+
+
+</div>
+</body>
+</html>

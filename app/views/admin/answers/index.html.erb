@@ -1,0 +1,26 @@
+<h1>Listing answers</h1>
+
+<table>
+  <tr>
+    <th>ID</th>
+    <th>Question ID</th>
+    <th>Body</th>
+  </tr>
+
+<% for answer in @answers %>
+  <tr>
+    <td><%= answer.id %>
+    <td><%=h answer.question_id %></td>
+    <td><%=h answer.body %></td>
+    <td><%= link_to 'Show', [:admin, @question, answer] %></td>
+    <td><%= link_to 'Edit', [:edit, :admin, @question, answer] %></td>
+    <td><%= link_to 'Destroy', [:admin, @question, answer], 
+      :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New answer', 
+  new_admin_question_answer_path(@question) %>

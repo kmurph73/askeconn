@@ -1,0 +1,11 @@
+<h1>Editing answer</h1>
+
+<%= error_messages_for :answer %>
+
+<%= render :partial => @answer, 
+  :locals => { :button_name => "Update"} %>
+
+<%= link_to 'Users', admin_users_path %>
+<%= link_to 'Show', [:admin, @question, @answer] %> |
+<%= link_to 'Back', admin_question_answers_path(@question) %>
+

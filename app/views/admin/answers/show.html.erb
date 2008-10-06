@@ -1,0 +1,8 @@
+<p>
+  <b>Body:</b>
+  <%=h @answer.body %>
+</p>
+
+
+<%= link_to 'Edit', [:edit, :admin, @question, @answer] %> |
+<%= link_to 'Back', admin_question_answers_path(@question) %>

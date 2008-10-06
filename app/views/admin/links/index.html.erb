@@ -1,0 +1,26 @@
+<h1>Listing links</h1>
+
+<table>
+  <tr>
+    <th>Body</th>
+    <th>Text</th>
+    <th>User</th>
+    <th>Question</th>
+  </tr>
+
+<% for link in @links %>
+  <tr>
+    <td><%=h link.body %></td>
+    <td><%=h link.text %></td>
+    <td><%=h link.user_id %></td>
+    <td><%=h link.question_id %></td>
+    <td><%= link_to 'Show', [:admin, link] %></td>
+    <td><%= link_to 'Edit', edit_admin_link_path(link) %></td>
+    <td><%= link_to 'Destroy', [:admin, link], :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New link', new_admin_link_path %>

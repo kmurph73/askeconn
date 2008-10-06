@@ -1,0 +1,22 @@
+<h1>Questions</h1>
+
+<center><% form_tag questions_path, :method => 'get' do %>
+  <p>
+    <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag "Search", :name => nil %>
+  </p>
+<% end %></center>
+<center><table class="questions">
+  <tr class="even">
+    <th class="question">Question</th>
+    <th class="asker">Asker</th>
+    <th>Answers</th>
+  </tr>
+<% for question in @questions %>
+	<tr class="<%= cycle('odd', 'even') %>">
+	<td>  <%= link_to question.title.gsub(/<.*?>/,''), question %></td>
+	<td>  <%= link_to full_name(question.user), question.user %></td>
+	<td>  <%= question.answers.count  %></td>
+	</tr>
+<% end %>
+ </table></center>

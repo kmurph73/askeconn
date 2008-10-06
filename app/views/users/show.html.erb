@@ -1,0 +1,42 @@
+<% if current_user? %>
+  <%= link_to "Edit Your Profile", edit_user_path %>
+<% end %>
+
+<p>
+  <b>Screen name:</b>
+  <%=h @user.login %>
+</p>
+
+<p>
+  <b>Name:</b>
+  <%=h @user.first_name %>  <%=h @user.middle_initial %> <%=h @user.last_name %>
+</p>
+
+<p>
+  <b>Birthday:</b>
+  <%=h @user.birthday %>
+</p>
+
+<p>
+  <b>Email:</b>
+  <%=h @user.email %>
+</p>
+
+<p>
+  <b>Country:</b>
+  <%=h @user.country %>
+</p>
+
+<p>
+  <b>Blurb about this person:</b>
+  <%=h @user.quote %>
+</p>
+
+<% unless @user.profile.nil? || @user.profile.empty? %>
+  <p>
+  <b>Profile:</b>
+  </p>
+  <div class="profile"><%= @user.profile %></div>
+<% else %>
+  <p><i>No public profile availible for this user</i></p>
+<% end %>

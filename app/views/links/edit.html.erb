@@ -1,0 +1,18 @@
+<h1>Editing Link</h1>
+
+<%= error_messages_for :link %>
+
+<% form_for [@question, @link] do |f| %>
+
+
+  <p><label>URL:</label><br/>
+  <%= f.text_field :body %></p>
+  
+  <p><label>Text:</label><br/>
+  <%= f.text_field :text %></p>
+
+  <p>
+    <%= f.submit "Update" %>
+  </p>
+
+<% end %>

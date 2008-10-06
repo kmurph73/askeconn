@@ -1,0 +1,9 @@
+<% form_for([@question, @answer], {:name => "theform"}) do |f| %>
+  <p>
+    <%= f.text_area :body %>
+  </p>
+  
+  <p>
+    <%= f.submit button_name %>
+  </p>
+<% end %>

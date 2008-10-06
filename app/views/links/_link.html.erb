@@ -1,0 +1,13 @@
+<% form_for([@question, @link]) do |f| %>
+  <p>
+    Full URL: <%= f.text_field :body %>
+  </p>
+  
+  <p>
+    Text: <%= f.text_field :text %>
+  </p>
+  
+  <p>
+    <%= f.submit button_name %>
+  </p>
+<% end %>

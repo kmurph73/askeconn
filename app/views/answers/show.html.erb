@@ -1,0 +1,8 @@
+<%= link_to @answer.user.login, user_path(@answer.user) %>'s response to 
+<%= link_to @answer.question.title, question_path(@question) %>
+
+<p>
+  <%=h @answer.body %>
+</p>
+
+<%= link_to 'edit', [:edit, @question, @answer] %>

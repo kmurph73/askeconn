@@ -1,0 +1,194 @@
+html { 
+  padding:0px;
+  margin:0px;
+}
+
+body {
+  background-color: #ffffff;
+  font-size: 12px;
+  font-family: Verdana, Arial, SunSans-Regular, Sans-Serif;
+  color:#564b47;  
+  padding:0px;
+  margin:0px;
+}
+
+p.more_right {
+margin-left: 20px;
+}
+
+#nav a { 
+color: #ffffff;
+font-size: 11px;
+text-decoration: none; 
+}
+
+#content a { 
+color: black;
+text-decoration: underline;
+font-size: 115%;
+}
+
+#content a.small{ 
+color: black;
+text-decoration: underline;
+font-size: 90%;
+}
+
+
+h2 {
+font-size:14px;
+padding-top:10px;
+color: #CC3300;
+}
+
+/*  positioning-layers statisch und absolut */
+
+#nav {
+font-size: 11px;
+text-transform:uppercase;
+text-align: center;
+color: #ffffff;
+background-color: #003399;
+padding:5px 15px;
+margin:0px;
+font-weight: bold;
+}
+
+#left {
+position: absolute;
+left: 0px;
+width: 190px;
+color: #003399;
+margin: 0px; 
+padding: 0px;
+}
+
+#top {
+padding: 10px;
+background-color: #ffffff;
+}
+
+#content {
+margin: 0px 190px 0px 190px;
+border-left: 2px solid #003399;
+border-right: 2px solid #003399;
+border-bottom: 2px solid #003399;
+padding: 10px;
+color: black;
+background-color: #D9DDE0;    
+}
+
+#content h1 {
+margin: 0px; 
+padding: 5px 20px 5px 20px;
+text-align: center;
+color: #CC3300;
+font-size:14px;
+}
+
+#right {
+position: absolute;
+right: 0px;        
+width: 190px;
+color: #003399;
+margin: 0px; 
+padding: 0px;
+}
+
+.aligntwo {
+float: left;
+width: 436px;
+}
+
+.profile {
+border: 1px solid #003399;
+background-color: #FAFAFA;
+margin-left: 30px;
+padding: 10px;
+}
+
+.quote {
+padding: 10px 0 10px 20px;
+}
+.tagline {
+	font:17px times new roman;
+	color: #CC3300;
+	letter-spacing:.2em;
+}
+	
+.logo {
+	font:24px times new roman;
+	color: #0E177C;
+	letter-spacing:.3em;
+	font-weight:bold;
+	line-height:22px;
+}
+
+table.questions {
+
+}
+
+table.questions th {
+padding: 5px;
+}
+
+table.questions th.question {
+width: 450px;
+}
+
+table.questions tr.even {
+background-color: #ffffff;
+}
+
+table.questions th.asker {
+width: 200px;
+}
+
+table.questions td {
+padding: 3px;
+}
+
+.answer {
+border: 1px solid #003399;
+}
+
+.top {
+border-bottom: 1px solid #003399;
+padding: 2px;
+background-color: #8DB6CD;
+}
+
+#answers a {
+color: black;
+font-size: 100%;
+}
+#answers {
+margin-left: 20px;
+}
+
+#answers .top .right {
+float: left;
+text-align: right;
+width: 30%;
+}
+
+#answers .top .left {
+float: left;
+width: 70%;
+}
+
+.main {
+padding: 4px;
+}
+
+.bottom {
+border-top: 1px solid #003399;
+padding: 2px;
+color: #003399;
+font-size: 90%;
+font-family: arial;
+}
+
+.clear {
+clear: both
+}

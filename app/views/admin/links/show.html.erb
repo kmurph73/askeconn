@@ -1,0 +1,23 @@
+<p>
+  <b>Body:</b>
+  <%=h @link.body %>
+</p>
+
+<p>
+  <b>Body:</b>
+  <%=h @link.text %>
+</p>
+
+<p>
+  <b>User:</b>
+  <%=h @link.user_id %>
+</p>
+
+<p>
+  <b>Question:</b>
+  <%=h @link.question_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_admin_link_path(@link) %> |
+<%= link_to 'Back', admin_links_path %>

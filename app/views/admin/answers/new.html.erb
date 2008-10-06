@@ -1,0 +1,9 @@
+<h1>New answer</h1>
+
+<%= error_messages_for :answer %>
+
+<%= render :partial => @answer, 
+  :locals => { :button_name => "Create"} %>
+
+<%= link_to 'Back', admin_question_answers_path(@question) %>
+

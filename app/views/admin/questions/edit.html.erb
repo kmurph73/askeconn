@@ -1,0 +1,26 @@
+<h1>Editing question</h1>
+
+<%= error_messages_for :question %>
+
+<% form_for([:admin, @question]) do |f| %>
+
+<p><label for="title">Title:</label><br/>
+  <%= f.text_field :title %></p>
+  <p>
+    <%= f.label :body %><br />
+    <%= f.text_area :body %>
+  </p>
+  
+  <p>
+    <%= f.label :user_id %><br />
+    <%= f.text_field :user_id %>
+  </p>
+  
+  <p>
+    <%= f.submit "Update" %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', [:admin, @question] %> |
+<%= link_to 'Back', admin_questions_path %>
+

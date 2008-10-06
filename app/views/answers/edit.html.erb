@@ -1,0 +1,10 @@
+<h1>Editing Answer</h1>
+
+<%= @question.title %>
+
+<%= error_messages_for :answer %>
+
+<%= render :partial => @answer, 
+  :locals => { :button_name => "Update"} %>
+
+<%= link_to 'Back to question', @question %>

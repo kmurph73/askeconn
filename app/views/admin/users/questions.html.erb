@@ -1,0 +1,6 @@
+Questions asked by <% @user = User.find_by_id(params[:id])%> <%= link_to @user.login, [:admin, @user] %>
+
+<br/>
+<% @questions.each do |q| %>
+	<%= check_box(q, ":confirm => 'Are you sure?', :method => :delete") %> <%= link_to q.title, [:admin, q] %> <br/>
+<% end %>

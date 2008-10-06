@@ -1,0 +1,40 @@
+
+<p>
+  <b>Screen name:</b>
+  <%=h @user.login %>
+</p>
+
+<p>
+  <b>Profile:</b>
+  <%=h @user.profile %>
+</p>
+
+<p>
+  <b>Name:</b>
+  <%=h @user.first_name %> <%=h @user.middle_initial %> <%=h @user.last_name %>
+</p>
+
+<p>
+  <b>Birthday:</b>
+  <%=h @user.birthday %>
+</p>
+
+<p>
+  <b>Email:</b>
+  <%=h @user.email %>
+</p>
+
+<p>
+  <b>Country:</b>
+  <%=h @user.country %>
+</p>
+
+
+<p>
+	<b>Admin?</b>
+	<%= @user.admin%>
+</p>
+
+<%= link_to 'Edit', edit_admin_user_path(@user) %> |
+<%= link_to 'Back', admin_users_path %> |
+<%= link_to 'Questions Asked', :controller => "admin/users", :action => "questions", :id => @user.id %>
