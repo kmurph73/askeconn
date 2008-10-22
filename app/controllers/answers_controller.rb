@@ -59,6 +59,8 @@ class AnswersController < ApplicationController
     end
   end
 
+
+
   # DELETE /answers/1
   # DELETE /answers/1.xml
   def destroy
