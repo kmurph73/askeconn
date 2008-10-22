@@ -5,6 +5,8 @@ class AnswersController < ApplicationController
   def load_question
     @question = Question.find(params[:question_id])
   end
+  
+  
 
   # GET /answers/1
   # GET /answers/1.xml
