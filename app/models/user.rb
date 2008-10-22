@@ -12,8 +12,8 @@ class User < ActiveRecord::Base
   def before_save 
     # text_view field is for View
     # original text field saved for editing
-    self.view_profile = ae_some_html(self.profile)
-    self.view_quote = ae_some_html(self.quote)
+    self.view_profile = ae_some_html(self.profile) if self.profile
+    self.view_quote = ae_some_html(self.quote) if self.quote
     # if you don't need to save original text
     # just do
     # self.text = ae_some_html(self.text)
