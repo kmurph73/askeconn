@@ -2,7 +2,7 @@ class UsersController < ApplicationController
   before_filter :current_user?, :only => :edit
   
   def index
-    @users = User.find(:all, :conditions => ["admin = ?" , true], :order => 'last_name')
+    @users = User.find(:all, :conditions => ["admin = ?" , 1], :order => 'last_name')
     @title = "Authors"
 
     respond_to do |format|
