@@ -21,13 +21,13 @@ class User < ActiveRecord::Base
   
   def self.search_admin(search, page)
     paginate :per_page => 30, :page => page,
-           :conditions => ['login like ? AND admin like ?', "%#{search}%", 1],
+           :conditions => ['login like ? AND admin = ?', "%#{search}%", 1],
            :order => :login
   end
   
   def self.search_user(search, page)
     paginate :per_page => 30, :page => page,
-           :conditions => ['login like ? AND admin like ?', "%#{search}%", 0],
+           :conditions => ['login like ? AND admin = ?', "%#{search}%", 0],
            :order => :login
   end
   
