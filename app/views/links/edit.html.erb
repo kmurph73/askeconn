@@ -10,9 +10,11 @@
   
   <p><label>Text:</label><br/>
   <%= f.text_field :text %></p>
-
   <p>
     <%= f.submit "Update" %>
   </p>
 
 <% end %>
+
+<p><%= link_to 'Delete this question', [@question, @link], 
+  :confirm => 'Are you sure?', :method => :delete %></p>

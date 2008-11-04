@@ -63,7 +63,7 @@ class LinksController < ApplicationController
     @link.destroy
 
     respond_to do |format|
-      format.html { redirect_to(question_links_url) }
+      format.html { redirect_to(@question) }
       format.xml  { head :ok }
     end
   end

@@ -19,7 +19,7 @@ class SessionController < ApplicationController
       redirect_to(uri || questions_path )
       flash[:notice] = "Logged in successfully"
     else
-      flash.now[:notice] = "Shit went wrong"
+      flash.now[:notice] = "Something went wrong"
       render :action => 'new'
     end
   end
