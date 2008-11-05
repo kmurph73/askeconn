@@ -19,7 +19,7 @@
 	<tr class="<%= cycle('odd', 'even') %>">
 	<td><%= check_box_tag "question_ids[]", question.id %></td>
 	<td>  <%= link_to question.title.gsub(/<.*?>/,''), [:admin, question] %></td>
-	<td>  <%= link_to full_name(question.user), [:admin, question.user] %></td>
+	<td>  <%= link_to question.user.login, [:admin, question.user] %></td>
 	<td>  <%= question.answers.count  %></td>
 	<td><%= link_to question.user.login, [:admin, question.user] %></td>
 	<td><%= link_to 'Show', [:admin, question] %></td>
