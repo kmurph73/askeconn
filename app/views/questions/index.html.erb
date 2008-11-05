@@ -15,7 +15,7 @@
 <% for question in @questions %>
 	<tr class="<%= cycle('odd', 'even') %>">
 	<td>  <%= link_to question.title.gsub(/<.*?>/,''), question %></td>
-	<td>  <%= link_to full_name(question.user), question.user %></td>
+	<td>  <%= link_to question.user.login, question.user %></td>
 	<td>  <%= question.answers.count  %></td>
 	</tr>
 <% end %>

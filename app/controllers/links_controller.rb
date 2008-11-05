@@ -1,5 +1,5 @@
 class LinksController < ApplicationController
-  before_filter :load_question
+  before_filter :load_question, :current_user?
 
   def load_question
     @question = Question.find(params[:question_id])
@@ -67,4 +67,13 @@ class LinksController < ApplicationController
       format.xml  { head :ok }
     end
   end
+private
+
+  def current_user?
+    unless logged_in? && current_user.id == @question.links.find(params[:id]).user_id
+      flash[:notice] = "Not your link"
+      redirect_to questions_path
+    end
+  end
+  
 end
