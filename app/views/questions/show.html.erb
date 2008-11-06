@@ -30,7 +30,7 @@
 <% unless @question.links.empty? %>
   <h3>Links: </h3>
   <% @question.links.each do |link| %>
-    <a href="<%= link.body%>"><%= link.text %></a>
+    <a href="<%= link.body%>"><%= link.words %></a>
     <% if your_link?(link) %> 
       (<%= link_to 'Edit', edit_question_link_path(@question, link) %>)
     <%  end %> posted by <%= link_to full_name(link.user), link.user %><br/>
