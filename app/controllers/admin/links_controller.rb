@@ -42,7 +42,7 @@ class Admin::LinksController < ApplicationController
   # POST /links
   # POST /links.xml
   def create
-    @link = Link.new(params[:link])
+    @link = @questions.links.new(params[:link])
     @link.user_id = current_user.id
 
     respond_to do |format|

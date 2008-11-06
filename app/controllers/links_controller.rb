@@ -1,5 +1,6 @@
 class LinksController < ApplicationController
-  before_filter :load_question, :current_user?
+  before_filter :load_question
+  before_filter :current_user?, :only => :edit
 
   def load_question
     @question = Question.find(params[:question_id])
