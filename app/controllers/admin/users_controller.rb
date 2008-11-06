@@ -100,7 +100,7 @@ class Admin::UsersController < ApplicationController
     
 protected
   def authorized?
-    unless current_user && current_user.login == "bah"
+    unless current_user && current_user.login == "Kyle Murphy"
       flash[:notice] = "This place is for admins"
       redirect_to questions_path
     end
