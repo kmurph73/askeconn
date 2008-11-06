@@ -23,6 +23,7 @@ class UsersController < ApplicationController
     # reset_session
     @user = User.new(params[:user])
     @user.login = params[:user][:login]
+    @user.admin = 0
     @user.save
     if @user.errors.empty?
       self.current_user = @user
