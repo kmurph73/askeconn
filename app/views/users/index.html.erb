@@ -1,5 +1,4 @@
 
 <% for user in @users %>
-  <%=  link_to full_name(user), user_path(user) %><span class="economists"> -- <%= user.quote %> <br/>
+  <%=  link_to full_name(user), user_path(user) %><span class="economists"> -- <%= user.quote %></div> <br/>
 <% end %>
-</div>
