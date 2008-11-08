@@ -28,6 +28,12 @@ text-decoration: underline;
 font-size: 115%;
 }
 
+#content .economists a { 
+color: black;
+text-decoration: underline;
+font-size: 100%;
+}
+
 #content a.small{ 
 color: black;
 text-decoration: underline;
