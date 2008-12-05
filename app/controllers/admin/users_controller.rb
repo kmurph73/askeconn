@@ -44,6 +44,8 @@ class Admin::UsersController < ApplicationController
   # POST /users.xml
   def create
     @user = User.new(params[:user])
+    @user.login = params[:user][:login]
+    @user.admin = 0
 
     respond_to do |format|
       if @user.save

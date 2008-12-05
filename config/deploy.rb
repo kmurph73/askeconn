@@ -1,27 +1,21 @@
-set :stage, "staging" unless variables[:stage]
-
-stages =  %w(staging production)
-set :default_stage, "staging"
-require 'capistrano/ext/multistage'
-
-location = fetch(:stage_dir, "config/deploy")
-load "#{location}/#{stage}"
-
-default_run_options[:pty] = true
-set :application, "askeconn_#{stage}"
-set :domain, "72.14.179.64"
-set :repository,  "deploy@72.14.179.64:~/askeconn.git"
+set :domain, "ask-economists.com"
+set :application, "askeconn"
+set :repository,  "shmay@72.14.179.64:~/askeconn.git"
 
 set :mongrel_conf, "#{current_path}/config/mongrel_cluster.yml"
 set :scm, :git
 #set :deploy_via, :copy
-set :scm_password, "password"
+set :scm_password, "mIC+}R9!ENXVw4"
 set :branch, "master"
 
-ssh_options[:paranoid] = false
+# If you aren't deploying to /u/apps/#{application} on the target
+# servers (which is the default), you can specify the actual location
+# via the :deploy_to variable:
+# set :deploy_to, "/var/www/#{application}"
 
-set :user, "deploy"
-set :runner, user
+# If you aren't using Subversion to manage your source code, specify
+# your SCM below:
+# set :scm, :subversion
 
 role :app, domain
 role :web, domain
@@ -34,11 +28,15 @@ end
 
 after "deploy:update_code", :update_config
 
-namespace :passenger do
-  desc "Restart Application"
-  task :restart do
+namespace :deploy do
+  
+  desc "Restarting mod_rails with restart.txt"
+  task :restart, :roles => :app, :except => { :no_release => true } do
     run "touch #{current_path}/tmp/restart.txt"
   end
+  
+  [:start, :stop].each do |t|
+    desc "#{t} task is a no-op with mod_rails"
+    task t, :roles => :app do ; end
+  end
 end
-
-after :deploy, "passenger:restart"

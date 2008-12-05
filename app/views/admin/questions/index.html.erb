@@ -6,7 +6,7 @@
     <%= submit_tag "Search", :name => nil %>
   </p>
 <% end %></center>
-<% form_tag deletes_admin_users_path, :method => :delete do %>
+<% form_tag deletes_admin_questions_path, :method => :delete do %>
 <table class="questions">
   <tr class="even">
 	<th></th>
@@ -31,6 +31,8 @@
 <% end %>
  </table>
 <%= submit_tag "Delete" %>
-<% end %>                        
+<% end %>
+<%= link_to 'New', new_admin_question_path %>
+                        
 <%= will_paginate(@questions) %>
 

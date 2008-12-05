@@ -90,7 +90,7 @@ class Admin::QuestionsController < ApplicationController
   def deletes
     Question.delete_all(:id => params[:question_ids])
     
-    redirect_to(admin_users_url)
+    redirect_to(admin_questions_url)
   end
 protected
 
