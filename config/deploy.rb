@@ -2,7 +2,6 @@ set :domain, "ask-economists.com"
 set :application, "askeconn"
 set :repository,  "shmay@72.14.179.64:~/askeconn.git"
 
-set :mongrel_conf, "#{current_path}/config/mongrel_cluster.yml"
 set :scm, :git
 #set :deploy_via, :copy
 set :scm_password, "mIC+}R9!ENXVw4"
@@ -26,8 +25,6 @@ task :update_config, :roles => [:app] do
   #run "ln -s #{shared_path}/log #{release_path}/log"
 end
 
-after "deploy:update_code", :update_config
-
 namespace :deploy do
   
   desc "Restarting mod_rails with restart.txt"
@@ -39,4 +36,5 @@ namespace :deploy do
     desc "#{t} task is a no-op with mod_rails"
     task t, :roles => :app do ; end
   end
+
 end
