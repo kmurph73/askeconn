@@ -14,7 +14,7 @@ test:
   timeout: 5000
 
 production:
-  adapter: postgresql
+  adapter: postgres
   database: askeconn
   encoding: unicode
   host: localhost
