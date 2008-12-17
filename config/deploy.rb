@@ -1,12 +1,12 @@
 set :scm, :git
 #set :deploy_via, :copy
-set :scm_password, "mIC+}R9!ENXVw4"
+set :scm_password, "bahbah"
 set :rails_env, "production"
 
 set :domain, "ask-economists.com"
 set :application, "askeconn"
-set :repository,  "deploy@72.14.179.64:/home/deploy/askeconn.git"
-set :user, "deploy"
+set :repository,  "root@72.14.179.64:/bah.git"
+set :user, "root"
 set :scm_verbose, true
 default_run_options[:pty] = true
 

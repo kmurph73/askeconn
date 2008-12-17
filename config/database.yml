@@ -15,9 +15,9 @@ test:
 
 production:
   adapter: postgresql
-  database: askeconn
-  encoding: unicode
+  database: bah
+  encoding: UTF8
   host: localhost
   user: askecon
-  password: mIC+}R9!ENXVw4
+  password: bahbah
   timeout: 5000
