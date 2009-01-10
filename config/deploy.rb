@@ -5,8 +5,9 @@ set :rails_env, "production"
 
 set :domain, "ask-economists.com"
 set :application, "askeconn"
-set :repository,  "deploy@72.14.179.64:/home/deploy/askeconn.git"
+set :repository,  "deploy@72.14.179.64:~/askeconn.git"
 set :user, "deploy"
+default_run_options[:pty] = true
 
 # If you aren't deploying to /u/apps/#{application} on the target
 # servers (which is the default), you can specify the actual location

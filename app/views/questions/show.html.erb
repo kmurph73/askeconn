@@ -8,7 +8,7 @@
 <p>
   <i><b><%=h @question.title %></b></i>
 </p>
-<p class="more_right"> <%= h @question.body %> </p>
+<p class="more_right"> <%= simple_format(@question.body) %> </p>
 <br/>
 <!-- #1 -->
 
