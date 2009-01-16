@@ -19,7 +19,7 @@
         <div class="top"><span class="left"><%= link_to answer.user.login, user_path(answer.user), {:name => answer.id } %> <%= answer.user.country %> 
                 <%= answer.created_at.strftime("%a %b %d") %> Answers <%= answer.user.answers.count %></span><span class="right"><a href="#<%= answer.id %>">Link</a>
                 <%= link_to "Edit", [:edit, @question, answer] if current_user && (current_user.id == answer.user.id) %></span><div class="clear"></div></div>
-        <div class="main"> <%= answer.body %>   </div>
+        <div class="main"> <%= simple_format(answer.body) %>   </div>
         <div class="bottom"> <%= answer.user.quote %>   </div>
       </div><br/>                  
    
@@ -38,11 +38,12 @@
 <% end %>
 <!-- #2 -->
 <% if current_user && current_user.admin == 1 %>
-  <h3> Add a link: </h3>
-  <%= render :partial => @link = Link.new(:body => 'http://'), 
-     :locals => { :button_name => 'Submit'}%>
   <h3>Answer this question: </h3>
 	Some HTML allowed
   <%= render :partial => @answer = Answer.new, 
      :locals => { :button_name => 'Submit'}%>
+		<h3>Or</h3>
+	  <h3> Add a link (for further reading): </h3>
+	  <%= render :partial => @link = Link.new(:body => 'http://'), 
+	     :locals => { :button_name => 'Submit'}%>
 <% end %>

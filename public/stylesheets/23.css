@@ -185,14 +185,24 @@ width: 70%;
 
 .main {
 padding: 4px;
+margin-bottom: -10px;
 }
 
+.main p {
+	margin-top: 0;
+	padding: 0;
+}
 .bottom {
 border-top: 1px solid #003399;
 padding: 2px;
 color: #003399;
-font-size: 90%;
+font-size: 96%;
 font-family: arial;
+}
+
+.bottom a {
+ 	color: #003399; 
+	text-decoration: underline;
 }
 
 .clear {
