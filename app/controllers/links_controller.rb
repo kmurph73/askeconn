@@ -40,8 +40,6 @@ class LinksController < ApplicationController
     end
   end
 
-  # PUT /links/1
-  # PUT /links/1.xml
   def update
     @link = @question.links.find(params[:id])
 
