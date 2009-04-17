@@ -57,8 +57,6 @@ class LinksController < ApplicationController
     end
   end
 
-  # DELETE /links/1
-  # DELETE /links/1.xml
   def destroy
     @link = @question.links.find(params[:id])
     @link.destroy
